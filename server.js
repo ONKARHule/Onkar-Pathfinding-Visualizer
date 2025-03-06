@@ -7,6 +7,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 })
 
-app.listen(1337, () => {
-  console.log("The server is up and running!");
+const PORT = process.env.PORT || 1337;  // Use Render's assigned port
+app.listen(PORT, () => {
+  console.log(`The server is up and running on port ${PORT}!`);
 });
